@@ -1,6 +1,6 @@
-# imooc-ebook
 
-## Project setup
+
+## imooc-ebook Project setup
 ```
 npm install
 ```
