@@ -1,0 +1,7 @@
+@import "reset";
+
+//字體計算轉化成rem
+$ratio: 375/10;
+@function px2rem($px) {
+  @return $px/$ratio+rem;
+}
