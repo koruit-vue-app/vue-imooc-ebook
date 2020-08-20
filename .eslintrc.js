@@ -16,5 +16,6 @@ module.exports = {
     'indent': 'off',
     'no-multiple-empty-lines': 'off',
     'no-irregular-whitespace': 'off',
+
   }
 }

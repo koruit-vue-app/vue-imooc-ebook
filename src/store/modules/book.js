@@ -1,17 +1,17 @@
 const book = {
   state: {
-    test: 1
+    fileName: '',
+    menuVisible: false,
   },
   mutations: {
-    'set_test': (state, newTest) => {
-      state.test = newTest
+    'set_fileName': (state, newFileName) => {
+      state.fileName = newFileName
+    },
+    'set_menuVisible': (state, value) => {
+      state.menuVisible = value
     }
   },
-  actions: {
-    setTest: ({ commit, state }, newTest) => {
-      return commit('set_test', newTest)
-    }
-  }
+
 }
 
 export default book

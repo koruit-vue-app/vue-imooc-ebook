@@ -1,0 +1,12 @@
+
+//字體計算轉化成rem
+$ratio: 375/10;
+@function px2rem($px) {
+  @return $px/$ratio+rem;
+}
+
+@mixin center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
