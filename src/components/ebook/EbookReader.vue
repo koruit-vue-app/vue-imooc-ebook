@@ -26,6 +26,7 @@
         let baseUrl = 'http://211.149.164.87:82/epub/'
         let bookUrl = `${baseUrl}${this.fileName}.epub`
         this.book = new Epub(bookUrl)
+        this.setCurrentBook(this.book)
         this.render = this.book.renderTo('read', {
           width: innerWidth,
           height: innerHeight,
@@ -79,9 +80,11 @@
       toggleMenuAndTitle () {
         console.log('显示菜单和头')
         this.setMenuVisible(!this.menuVisible)
+        this.setSettingVisible(-1)
       },
       hideMenuAndTitle () {
-        this.setMenuVisible( false)
+        this.setMenuVisible(false)
+        this.setSettingVisible(-1)
       }
     },
     mounted () {
