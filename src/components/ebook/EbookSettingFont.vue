@@ -18,7 +18,7 @@
           </div>
           <div class="preview" :style="{fontSize: fontSizeList[fontSizeList.length - 1].fontSize + 'px'}">A</div>
         </div>
-        <div class="setting-font-family" @click="showFontFamilyProp">
+        <div class="setting-font-family" @click="showFontFamilyPopup">
           <div class="setting-font-family-text-wrapper">
             <span class="setting-font-family-text">{{this.defaultFontFamily}}</span>
           </div>
@@ -49,8 +49,8 @@
         this.setDefaultFontSize(fontSize)
         this.currentBook.rendition.themes.fontSize(`${fontSize}px`)
       },
-      showFontFamilyProp(){
-        console.log('弹出面板')
+      showFontFamilyPopup(){
+       this.setFontFamilyVisible(true)
       }
     }
   }

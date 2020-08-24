@@ -19,7 +19,11 @@ const actions = {
   },
   setDefaultFontFamily:({commit},defaultFontFamily)=>{
     return commit('set_defaultFontFamily',defaultFontFamily)
-  }
+  },
+
+  setFontFamilyVisible:({commit},fontFamilyVisible)=>{
+    return commit('set_fontFamilyVisible',fontFamilyVisible)
+  },
 
 }
 

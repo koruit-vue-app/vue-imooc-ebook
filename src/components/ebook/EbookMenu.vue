@@ -18,6 +18,7 @@
       </div>
     </transition>
     <ebook-setting-font></ebook-setting-font>
+    <ebook-setting-font-pump></ebook-setting-font-pump>
 
   </div>
 </template>
@@ -25,10 +26,11 @@
 <script>
   import { ebookMixin } from '../../utils/mixin'
   import EbookSettingFont from './EbookSettingFont'
+  import EbookSettingFontPump from './EbookSettingFontPump'
 
   export default {
     name: 'EbookMenu',
-    components: { EbookSettingFont },
+    components: { EbookSettingFontPump, EbookSettingFont },
     mixins: [ebookMixin],
     methods: {
       showSetting (value) {
