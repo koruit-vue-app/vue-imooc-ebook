@@ -1,4 +1,4 @@
-import { mapGetters ,mapActions} from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export const ebookMixin = {
   computed: {
@@ -12,7 +12,7 @@ export const ebookMixin = {
       'fontFamilyVisible'
     ])
   },
-  methods:{
+  methods: {
     ...mapActions([
       'setMenuVisible',
       'setFileName',

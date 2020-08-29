@@ -51,6 +51,7 @@
       },
       showFontFamilyPopup(){
        this.setFontFamilyVisible(true)
+        console.log('showFontFamilyPopup')
       }
     }
   }

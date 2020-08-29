@@ -55,6 +55,12 @@
           }
           event.preventDefault()
           event.stopPropagation()
+        })
+        this.render.hooks.content.register(contents=>{
+          contents.addStylesheet('http://211.149.164.87:82/fonts/cabin.css')
+          contents.addStylesheet('http://211.149.164.87:82/fonts/daysOne.css')
+          contents.addStylesheet('http://211.149.164.87:82/fonts/montserrat.css')
+          contents.addStylesheet('http://211.149.164.87:82/fonts/tangerine.css')
 
         })
         console.log(bookUrl)
@@ -81,10 +87,12 @@
         console.log('显示菜单和头')
         this.setMenuVisible(!this.menuVisible)
         this.setSettingVisible(-1)
+        this.setFontFamilyVisible(false)
       },
       hideMenuAndTitle () {
         this.setMenuVisible(false)
         this.setSettingVisible(-1)
+        this.setFontFamilyVisible(false)
       }
     },
     mounted () {

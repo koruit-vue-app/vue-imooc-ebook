@@ -17,13 +17,13 @@ const actions = {
   setCurrentBook: ({ commit }, currentBook) => {
     return commit('set_currentBook', currentBook)
   },
-  setDefaultFontFamily:({commit},defaultFontFamily)=>{
-    return commit('set_defaultFontFamily',defaultFontFamily)
+  setDefaultFontFamily: ({ commit }, defaultFontFamily) => {
+    return commit('set_defaultFontFamily', defaultFontFamily)
   },
 
-  setFontFamilyVisible:({commit},fontFamilyVisible)=>{
-    return commit('set_fontFamilyVisible',fontFamilyVisible)
-  },
+  setFontFamilyVisible: ({ commit }, fontFamilyVisible) => {
+    return commit('set_fontFamilyVisible', fontFamilyVisible)
+  }
 
 }
 
