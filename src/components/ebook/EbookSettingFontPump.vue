@@ -23,6 +23,7 @@
 <script>
   import { ebookMixin } from '../../utils/mixin'
   import { FONT_FAMILY_LIST } from '../../utils/book'
+  import {setLocalStorage,getLocalStorage} from '../../utils/localStorage'
 
   export default {
     name: 'EbookSettingFontPump',
@@ -45,6 +46,10 @@
         this.currentBook.rendition.themes.font(item.font)
         console.log(this.currentBook)
       }
+    },
+    mounted () {
+      setLocalStorage("aaa",this.defaultFontFamily)
+      console.log(getLocalStorage("aaa"))
     }
   }
 </script>

@@ -56,11 +56,16 @@
           event.preventDefault()
           event.stopPropagation()
         })
-        this.render.hooks.content.register(contents=>{
-          contents.addStylesheet('http://211.149.164.87:82/fonts/cabin.css')
-          contents.addStylesheet('http://211.149.164.87:82/fonts/daysOne.css')
-          contents.addStylesheet('http://211.149.164.87:82/fonts/montserrat.css')
-          contents.addStylesheet('http://211.149.164.87:82/fonts/tangerine.css')
+        this.render.hooks.content.register(contents => {
+
+          Promise.all([
+            contents.addStylesheet(`${process.env.VUE_APP_RES_URL}/fonts/cabin.css`),
+            contents.addStylesheet(`${process.env.VUE_APP_RES_URL}/fonts/daysOne.css`),
+            contents.addStylesheet(`${process.env.VUE_APP_RES_URL}/fonts/montserrat.css`),
+            contents.addStylesheet(`${process.env.VUE_APP_RES_URL}/fonts/tangerine.css`)
+          ]).then(() => {
+            console.log('字体全部加载完毕')
+          })
 
         })
         console.log(bookUrl)
