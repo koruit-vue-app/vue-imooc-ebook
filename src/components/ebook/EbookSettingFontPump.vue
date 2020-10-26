@@ -5,7 +5,7 @@
         <div class="font-title-icon" @click="hide">
           <span class="icon-down2"></span>
         </div>
-        <span class="font-title-text">选择字体</span>
+        <span class="font-title-text">{{ $t('book.selectFont')}}</span>
       </div>
       <div class="font-setting-list-wrapper">
         <div class="ebook-popup-item" v-for="(item,index) in fontFamilyList" :key="index"
@@ -23,7 +23,7 @@
 <script>
   import { ebookMixin } from '../../utils/mixin'
   import { FONT_FAMILY_LIST } from '../../utils/book'
-  import {setLocalStorage,getLocalStorage} from '../../utils/localStorage'
+  import {setFontFamily} from '../../utils/localStorage'
 
   export default {
     name: 'EbookSettingFontPump',
@@ -35,7 +35,6 @@
     },
     methods: {
       hide () {
-        console.log('hide')
         this.setFontFamilyVisible(false)
       },
       isSelected (item) {
@@ -44,12 +43,11 @@
       fontFamilyClick (item) {
         this.setDefaultFontFamily(item.font)
         this.currentBook.rendition.themes.font(item.font)
-        console.log(this.currentBook)
+        setFontFamily(this.fileName,item.font)
       }
     },
     mounted () {
-      setLocalStorage("aaa",this.defaultFontFamily)
-      console.log(getLocalStorage("aaa"))
+
     }
   }
 </script>

@@ -34,6 +34,7 @@
 <script>
   import { ebookMixin } from '../../utils/mixin'
   import { FONT_SIZE_LIST } from '../../utils/book'
+  import { getFontFamily, setFontSize } from '../../utils/localStorage'
 
   export default {
     name: 'EbookSettingFont',
@@ -48,9 +49,10 @@
         console.log(fontSize)
         this.setDefaultFontSize(fontSize)
         this.currentBook.rendition.themes.fontSize(`${fontSize}px`)
+        setFontSize(this.fileName, fontSize)
       },
-      showFontFamilyPopup(){
-       this.setFontFamilyVisible(true)
+      showFontFamilyPopup () {
+        this.setFontFamilyVisible(true)
         console.log('showFontFamilyPopup')
       }
     }

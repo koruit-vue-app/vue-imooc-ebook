@@ -7,6 +7,7 @@
 <script>
   import { ebookMixin } from '@/utils/mixin'
   import Epub from 'epubjs'
+  import { setFontFamily, getFontFamily, setFontSize, getFontSize } from '../../utils/localStorage'
 
   global.epub = Epub
   export default {
@@ -33,7 +34,11 @@
           method: 'default',
           manager: 'continuous'
         })
-        this.render.display()
+
+        this.render.display().then(() => {
+          this.initFontFamily()
+          this.initFontSize()
+        })
         this.render.on('touchstart', event => {
           this.startX = event.changedTouches[0].clientX
           this.startTime = event.timeStamp
@@ -69,6 +74,27 @@
 
         })
         console.log(bookUrl)
+      },
+
+      initFontFamily () {
+        let fontFamily = getFontFamily(this.fileName)
+        if (!fontFamily) {
+          fontFamily = this.defaultFontFamily
+        }
+        setFontFamily(this.fileName, fontFamily)
+        this.setDefaultFontFamily(fontFamily)
+        this.currentBook.rendition.themes.font(fontFamily)
+      },
+
+      initFontSize(){
+        let fontSize = getFontSize(this.fileName)
+        if (!fontSize) {
+          fontSize = this.defaultFontSize
+        }
+        setFontSize(this.fileName, fontSize)
+        this.setDefaultFontSize(fontSize)
+        this.currentBook.rendition.themes.fontSize(`${fontSize}px`)
+
       },
       prevPage () {
         console.log('上一页')
